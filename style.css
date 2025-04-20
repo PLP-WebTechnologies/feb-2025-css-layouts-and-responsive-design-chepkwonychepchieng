@@ -1,0 +1,150 @@
+/* style.css */
+
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0; /* Remove default body margin for full control */
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Enable Flexbox for the navigation items */
+    gap: 20px; /* Space out the navigation items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main content area */
+.container {
+    display: flex; /* Enable Flexbox for the main content */
+    padding: 20px;
+    gap: 30px; /* Space between the main content sections */
+    max-width: 1200px; /* Limit the maximum width of the content */
+    margin: 20px auto; /* Center the container */
+}
+
+.sidebar {
+    flex: 0 1 300px; /* Sidebar takes up 300px width, doesn't grow much */
+    padding: 20px;
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex: 1; /* Main content takes up remaining available space */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#main-heading {
+    color: #007bff;
+    text-align: left; /* Align heading to the left within the main content */
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.7; /* Slightly increased line height for main content */
+}
+
+.important-text {
+    font-weight: bold;
+    color: #dc3545;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: sticky; /* Stick the footer to the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile view (up to 600px width) */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack sidebar and main content vertically */
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%; /* Make sidebar full width */
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center navigation items */
+        gap: 10px;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-radius: 0;
+        border-bottom: 1px solid #555;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+}
+
+/* Tablet view (601px to 992px width) */
+@media (min-width: 601px) and (max-width: 992px) {
+    .container {
+        flex-direction: row; /* Keep sidebar and main content side by side */
+        padding: 15px;
+    }
+
+    .sidebar {
+        flex: 0 1 250px; /* Slightly narrower sidebar for tablets */
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+/* Desktop view (993px and above) - Inherits default styles */
